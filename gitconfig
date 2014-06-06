@@ -1,0 +1,66 @@
+[alias]
+  c = commit
+  up = pull
+  p = push
+  co = checkout
+  b = branch
+  br = branch -a
+  s = status -s
+  df = diff --color --color-words --abbrev
+  lg = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative  
+  lg2 = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  lol = log --pretty=oneline --abbrev-commit --graph --decorate --all
+  lod = log --oneline --decorate
+  lp = log -p
+  lf = log --graph
+  #l1 = log  --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --  
+  #l2 = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  #lf = log --pretty=fuller
+  
+  ignorechanges = update-index --assume-unchanged
+  noticechanges = update-index --no-assume-unchanged
+  gc-ap = gc --aggressive --prune
+  listconf = config --global --list
+  cam = commit -a -m
+  lsm = log -M --stat
+  hse = log --stat -5
+  diffall = diff HEAD
+  logr = log -M
+  logr2 = log --stat -M -2
+  logit = log --stat -M
+  scrub = !git reset --hard && git clean -fd
+  pubdev = !git pub checkout master && git pull && git checkout dev && git rebase master && git checkout master && git merge dev && git wtf
+  pub = push -u origin
+  cs = status
+  rv = remote -v
+  lwr = log --stat -C
+  pur = pull --rebase
+  whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
+
+
+[color]
+  ui = always
+[core]
+    excludesfile = ~/.gitignore
+    attributesfile = ~/.gitattributes
+
+[color "branch"]
+    current = yellow reverse
+      local = yellow
+        remote = green
+[color "diff"]
+    meta = yellow bold
+      frag = magenta bold
+        old = red bold
+          new = green bold
+[color "status"]
+    added = yellow
+      changed = green
+        untracked = cyan
+[merge]
+    log = true
+[user]
+	name = Andres Castro
+	email = andres.ca@gmail.com
+[mergetool]
+	keepBackup = true
