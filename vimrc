@@ -198,7 +198,6 @@ map <C-L> <C-W>l
 
 " Sudo write (,W)
 noremap <leader>W :w !sudo tee %<CR>
-
 " Remap :W to :w
 command W w
 
@@ -368,6 +367,9 @@ set relativenumber
 "Open vimrc
 nnoremap <leader>v :e ~/.vimrc<CR>
 nnoremap <leader>V :tabnew ~/.vimrc<CR>
+
+"Open a new Tab
+nnoremap <leader>t :tabnew<CR>
 
 filetype plugin indent on
 
