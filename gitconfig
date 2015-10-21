@@ -2,10 +2,18 @@
   c = commit
   up = pull
   p = push
+  upo = pull origin
   co = checkout
+  por = push origin
   b = branch
   br = branch -a
   s = status -s
+  db = branch -D
+  stc = stash
+  st = stash list
+  sta = stash apply
+  std = stash drop
+
   df = diff --color --color-words --abbrev
   lg = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative  
   lg2 = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
@@ -63,4 +71,6 @@
 	name = Andres Castro
 	email = andres.ca@gmail.com
 [mergetool]
-	keepBackup = true
+	keepBackup = false
+[credential]
+	helper = cache --timeout=3600

@@ -31,7 +31,8 @@ alias sb='subl'
 
 # be nice
 alias please=sudo
-alias hosts='sudo $EDITOR /etc/hosts'   # yes I occasionally 127.0.0.1 twitter.com ;)
+alias hosts='mate /etc/hosts'   # yes I occasionally 127.0.0.1 twitter.com ;)
+alias hts='cd /etc/hosts'   # yes I occasionally 127.0.0.1 twitter.com ;)
 
 # handy things
 alias bunyip='node ~/code/bunyip/cli.js'
@@ -40,11 +41,11 @@ alias vlc="osascript ~/code/VLCControl/VLCControl.scpt"
 
 
 # Detect which `ls` flavor is in use
-if ls --color > /dev/null 2>&1; then # GNU `ls`
-	colorflag="--color"
-else # OS X `ls`
-	colorflag="-G"
-fi
+#if ls --color > /dev/null 2>&1; then # GNU `ls`
+#	colorflag="--color"
+#else # OS X `ls`
+#	colorflag="-G"
+#fi
 
 
 
@@ -113,7 +114,9 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 
-
+#Hide/Show Files
+alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 # PlistBuddy alias, because sometimes `defaults` just doesn’t cut it
 alias plistbuddy="/usr/libexec/PlistBuddy"
 

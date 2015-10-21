@@ -6,8 +6,8 @@ done
 unset file
 
 # init z   https://github.com/rupa/z
-#. ~/code/z/z.sh
-. /Volumes/Storage/Dropbox/development/GitHub/z/z.sh
+. ~/code/z/z.sh
+#. /Volumes/Storage/Dropbox/development/GitHub/z/z.sh
 # init rvm
 #source ~/.rvm/scripts/rvm
 
@@ -31,15 +31,23 @@ export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 # MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
+export PATH="/usr/local/git/bin/:$PATH"
+
+export JAVA_HOME=$(/usr/libexec/java_home)
+
+export MONGO_PATH=/usr/local/mongodb
+export PATH=$PATH:$MONGO_PATH/bin
+
 # enable color support of ls and also add handy aliases
-test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls="ls --color=always"
+#test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+
+    alias ls="ls -FHG"
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
-    alias grep='grep --color=always'
-    alias fgrep='fgrep --color=always'
-    alias egrep='egrep --color=always'
+   # alias grep='grep --color=always'
+   # alias fgrep='fgrep --color=always'
+   # alias egrep='egrep --color=always'
 # test -e ~/.dircolors && \ 
 #    eval `dircolors -b ~/.dircolors`
 # alias ls="ls --color=always" 
