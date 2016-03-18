@@ -13,6 +13,7 @@ alias cl='clear'
 	alias la='ls -A'
 	alias l='ls -CF'
 	alias la="ls -la ${colorflag}"
+        alias lh="ls -lha"
 # List all files colorized in long format
 #alias l="ls -l ${colorflag}"
 
@@ -129,3 +130,17 @@ done
 alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume 10'"
 alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
+
+#Run node apps
+alias nup="npm install"
+alias ndev="npm run dev"
+alias ntest="npm run test"
+alias jsval="npm run eslint"
+alias cssval="npm run csslint"
+alias ndist="npm run build"
+alias nloc="npm run local"
+
+#PM2
+alias pm="pm2"
+alias pms="pm2 start"
+alias pmls="pm2 ls"

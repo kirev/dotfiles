@@ -8,11 +8,13 @@
   b = branch
   br = branch -a
   s = status -s
+  su = status -u
   db = branch -D
   stc = stash
   st = stash list
   sta = stash apply
   std = stash drop
+  upodg = pull dg develop
 
   df = diff --color --color-words --abbrev
   lg = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative  
@@ -30,6 +32,7 @@
   gc-ap = gc --aggressive --prune
   listconf = config --global --list
   cam = commit -a -m
+  cmn = commit -m -n
   lsm = log -M --stat
   hse = log --stat -5
   diffall = diff HEAD
