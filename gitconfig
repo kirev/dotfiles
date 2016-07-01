@@ -14,7 +14,14 @@
   st = stash list
   sta = stash apply
   std = stash drop
-  upodg = pull dg develop
+  upodg = pull dg
+  pordg = push dg
+  r = revert
+  m = merge
+  r2 = checkout release-2.0
+  dev = checkout develop
+  r2up= !git checkout release-2.0 && git pull dg release-2.0 
+  devup = !git checkout develop && git pull dg develop
 
   df = diff --color --color-words --abbrev
   lg = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative  
@@ -42,7 +49,6 @@
   scrub = !git reset --hard && git clean -fd
   pubdev = !git pub checkout master && git pull && git checkout dev && git rebase master && git checkout master && git merge dev && git wtf
   pub = push -u origin
-  cs = status
   rv = remote -v
   lwr = log --stat -C
   pur = pull --rebase
