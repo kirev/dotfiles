@@ -53,3 +53,8 @@ export PATH=$PATH:$MONGO_PATH/bin
 # alias ls="ls --color=always" 
 # alias grep="grep --color=always"
 # alias egrep="egrep --color=always"
+
+# Setting PATH for Python 2.7
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+export PATH

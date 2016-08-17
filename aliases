@@ -99,6 +99,7 @@ alias trimcopy="tr -d '\n' | pbcopy"
 alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
 
 # Shortcuts
+alias git="hub"
 alias g="git"
 alias v="vim"
 
@@ -134,7 +135,7 @@ alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
 #Run node apps
 alias nup="npm install"
 alias ndev="npm run dev"
-alias ntest="npm run test"
+alias ntest="npm run local:test"
 alias jsval="npm run eslint"
 alias cssval="npm run csslint"
 alias ndist="npm run build"

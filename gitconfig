@@ -18,9 +18,9 @@
   pordg = push dg
   r = revert
   m = merge
-  r2 = checkout release-2.0
+  r2 = checkout v1.2
   dev = checkout develop
-  r2up= !git checkout release-2.0 && git pull dg release-2.0 
+  #r2up= !git checkout v1.2  && git pull dg v1.2 
   devup = !git checkout develop && git pull dg develop
 
   df = diff --color --color-words --abbrev
@@ -53,7 +53,7 @@
   lwr = log --stat -C
   pur = pull --rebase
   whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
-
+  reb = rebase -i HEAD~3
 
 [color]
   ui = always
