@@ -1,3 +1,19 @@
+set rtp+=~/.vim/bundle/vundle/
+call vundle#begin()
+
+" let vundle manage vundle
+Plugin 'gmarik/vundle'
+
+" list all plugins that you'd like to install here
+Plugin 'kien/ctrlp.vim' " fuzzy find files
+Plugin 'scrooloose/nerdtree' " file drawer, open with :NERDTreeToggle
+Plugin 'benmills/vimux'
+Plugin 'tpope/vim-fugitive' " the ultimate git helper
+Plugin 'tpope/vim-commentary' " comment/uncomment lines with gcc or gc in visual mode
+
+call vundle#end()
+filetype plugin indent on
+
 " Make vim more useful
 set nocompatible
 
@@ -357,7 +373,7 @@ set relativenumber
              elseif a:action == 'k'
                 return "\<C-P>"
              endif
-      endif   
+      endif
       return a:action
   endfunction
   inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
