@@ -1,33 +1,47 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => General
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" load plugins from vundle
+filetype off
+
 set rtp+=~/.vim/bundle/vundle/
 call vundle#begin()
 
 " let vundle manage vundle
 Plugin 'gmarik/vundle'
 
-" list all plugins that you'd like to install here
+" utilities
 Plugin 'kien/ctrlp.vim' " fuzzy find files
 Plugin 'scrooloose/nerdtree' " file drawer, open with :NERDTreeToggle
 Plugin 'benmills/vimux'
 Plugin 'tpope/vim-fugitive' " the ultimate git helper
 Plugin 'tpope/vim-commentary' " comment/uncomment lines with gcc or gc in visual mode
+Plugin 'tpope/vim-vinegar' " Split windows and the project drawer go together like oil and vinegar
+Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'} " powerline add support
+Plugin 'sjl/gundo.vim' "visualize your Vim undo tree"
+Plugin 'mileszs/ack.vim' "favorite search tool from Vim"
+
+" JavaScript plugins
+Plugin 'pangloss/vim-javascript'
+Plugin 'jelera/vim-javascript-syntax'
 
 call vundle#end()
 filetype plugin indent on
 
 " Make vim more useful
 set nocompatible
+set autoread " detect when a file is changed
+
+" set a map leader for more key combos
+let mapleader=","
 
 " Set syntax highlighting options.
-set t_Co=256
-set background=dark
-syntax on
-colorscheme badwolf
 
+colorscheme badwolf
 " Enabled later, after Pathogen
 filetype off
 
-" Change mapleader
-let mapleader=","
 
 " Local dirs
 set backupdir=~/.vim/backups
@@ -43,8 +57,64 @@ set pastetoggle=<F2>
 map <leader>p :set invpaste paste?<CR>
 
 nnoremap <F5> :NERDTreeToggle<CR>
+set autoindent " Copy indent from last line when starting new line.
+set backspace=indent,eol,start
+set cursorline " Highlight current line
+set diffopt=filler " Add vertical spaces to keep right and left aligned
+set diffopt+=iwhite " Ignore whitespace changes (focus on code changes)
+set encoding=utf-8 nobomb " BOM often causes trouble
+set esckeys " Allow cursor keys in insert mode.
+set expandtab " Expand tabs to spaces
+
+" code folding settings
+set foldmethod=syntax " Markers are used to specify folds.
+set foldnestmax=10 " Set max fold nesting level
+set foldcolumn=4 " Column to show folds
+set foldenable
+set foldlevel=2
+set foldminlines=0 " Allow folding single lines
+" set foldlevelstart=2 " Sets `foldlevel` when editing a new buffer
+
+set formatoptions=
+set formatoptions+=c " Format comments
+set formatoptions+=r " Continue comments by default
+set formatoptions+=o " Make comment when using o or O from comment line
+set formatoptions+=q " Format comments with gq
+set formatoptions+=n " Recognize numbered lists
+set formatoptions+=2 " Use indent from 2nd line of a paragraph
+set formatoptions+=l " Don't break lines that are already long
+set formatoptions+=1 " Break before 1-letter words
+
+set gdefault " By default add g flag to search/replace. Add g to toggle.
+set hidden " When a buffer is brought to foreground, remember undo history and marks.
+set history=1000 " Increase history from 20 default to 1000
+set hlsearch " Highlight searches
+set ignorecase " Ignore case of searches.
+set smartcase " case-sensitive if expresson contains a capital letter
+set incsearch " set incremental search, like modern browsers
+set nolazyredraw " don't redraw while executing macros
+
+set lispwords+=defroutes " Compojure
+set lispwords+=defpartial,defpage " Noir core
+set lispwords+=defaction,deffilter,defview,defsection " Ciste core
+set lispwords+=describe,it " Speclj TDD/BDD
+set magic " Enable extended regexes.
+set mouse=a " Enable moouse in all in all modes.
+set noerrorbells " Disable error bells.
+set nojoinspaces " Only insert single space after a '.', '?' and '!' with a join command.
+set nostartofline " Don't reset cursor to start of line when moving around.
+set nowrap " Do not wrap lines.
+set nu " Enable line numbers.
+set ofu=syntaxcomplete#Complete " Set omni-completion method.
+set report=0 " Show all changes.
+set ruler " Show the cursor position
+
+set showmatch " show matching braces
+set mat=2 " how many tenths of a second to blink
 
 set autoindent " Copy indent from last line when starting new line.
+set smartindent
+
 set backspace=indent,eol,start
 set cursorline " Highlight current line
 set diffopt=filler " Add vertical spaces to keep right and left aligned
@@ -74,7 +144,6 @@ set history=1000 " Increase history from 20 default to 1000
 set hlsearch " Highlight searches
 set ignorecase " Ignore case of searches.
 set incsearch " Highlight dynamically as pattern is typed.
-set laststatus=2 " Always show status line
 set lispwords+=defroutes " Compojure
 set lispwords+=defpartial,defpage " Noir core
 set lispwords+=defaction,deffilter,defview,defsection " Ciste core
@@ -90,66 +159,26 @@ set ofu=syntaxcomplete#Complete " Set omni-completion method.
 set report=0 " Show all changes.
 set ruler " Show the cursor position
 
-nnoremap <F5> :NERDTreeToggle<CR>
-
-set autoindent " Copy indent from last line when starting new line.
-set backspace=indent,eol,start
-set cursorline " Highlight current line
-set diffopt=filler " Add vertical spaces to keep right and left aligned
-set diffopt+=iwhite " Ignore whitespace changes (focus on code changes)
-set encoding=utf-8 nobomb " BOM often causes trouble
-set esckeys " Allow cursor keys in insert mode.
-set expandtab " Expand tabs to spaces
-set foldcolumn=4 " Column to show folds
-set foldenable
-set foldlevel=2
-" set foldlevelstart=2 " Sets `foldlevel` when editing a new buffer
-set foldmethod=syntax " Markers are used to specify folds.
-set foldminlines=0 " Allow folding single lines
-set foldnestmax=3 " Set max fold nesting level
-set formatoptions=
-set formatoptions+=c " Format comments
-set formatoptions+=r " Continue comments by default
-set formatoptions+=o " Make comment when using o or O from comment line
-set formatoptions+=q " Format comments with gq
-set formatoptions+=n " Recognize numbered lists
-set formatoptions+=2 " Use indent from 2nd line of a paragraph
-set formatoptions+=l " Don't break lines that are already long
-set formatoptions+=1 " Break before 1-letter words
-set gdefault " By default add g flag to search/replace. Add g to toggle.
-set hidden " When a buffer is brought to foreground, remember undo history and marks.
-set history=1000 " Increase history from 20 default to 1000
-set hlsearch " Highlight searches
-set ignorecase " Ignore case of searches.
-set incsearch " Highlight dynamically as pattern is typed.
-set laststatus=2 " Always show status line
-set lispwords+=defroutes " Compojure
-set lispwords+=defpartial,defpage " Noir core
-set lispwords+=defaction,deffilter,defview,defsection " Ciste core
-set lispwords+=describe,it " Speclj TDD/BDD
-set magic " Enable extended regexes.
-set mouse=a " Enable moouse in all in all modes.
-set noerrorbells " Disable error bells.
-set nojoinspaces " Only insert single space after a '.', '?' and '!' with a join command.
-set nostartofline " Don't reset cursor to start of line when moving around.
-set nowrap " Do not wrap lines.
-set nu " Enable line numbers.
-set ofu=syntaxcomplete#Complete " Set omni-completion method.
-set report=0 " Show all changes.
-set ruler " Show the cursor position
-set scrolloff=3 " Start scrolling three lines before horizontal border of window.
+" Tab control
+set noexpandtab " tabs ftw
+set smarttab " At start of line, <Tab> inserts shiftwidth spaces, <Bs> deletes shiftwidth spaces.
+set tabstop=2 " the visible width of tabs
+set softtabstop=2 " Tab key results in 2 spaces
 set shiftwidth=2 " The # of spaces for indenting.
+set shiftround " round indent to a multiple of 'shiftwidth'
+
 set shortmess=atI " Don't show the intro message when starting vim.
 set showmode " Show the current mode.
 set showtabline=2 " Always show tab bar.
+set scrolloff=3 " Start scrolling three lines before horizontal border of window.
 set sidescrolloff=3 " Start scrolling three columns before vertical border of window.
 set smartcase " Ignore 'ignorecase' if search patter contains uppercase characters.
-set smarttab " At start of line, <Tab> inserts shiftwidth spaces, <Bs> deletes shiftwidth spaces.
-set softtabstop=2 " Tab key results in 2 spaces
 set splitbelow " New window goes below
 set splitright " New windows goes right
 set suffixes=.bak,~,.swp,.swo,.o,.d,.info,.aux,.log,.dvi,.pdf,.bin,.bbl,.blg,.brf,.cb,.dmg,.exe,.ind,.idx,.ilg,.inx,.out,.toc,.pyc,.pyd,.dll
 set title " Show the filename in the window titlebar.
+
+" faster redrawing
 set ttyfast " Send more characters at a given time.
 set ttymouse=xterm " Set mouse type to xterm.
 set undofile " Persistent Undo.
@@ -183,6 +212,12 @@ else
    let g:Powerline_symbols = 'compatible'
 endif
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Mappings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+nnoremap <F5> :NERDTreeToggle<CR>
+
 "Speed up viewport scrot current windowlling
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
@@ -191,6 +226,10 @@ nnoremap <C-y> 3<C-y>
 nnoremap  <C-Z> :update<CR>
 vnoremap <C-Z> <C-C>:update<CR>
 inoremap <C-Z> <C-O>:update<CR>
+
+" helpers for dealing with other people's code
+nmap \t :set ts=2 sts=2 sw=2 noet<cr>
+nmap \s :set ts=2 sts=2 sw=2 et<cr>
 
 "Quick quit command
 noremap <leader>e :quit<CR> "Quit current window
@@ -205,6 +244,7 @@ endif
 "easier moving between tabs
 map <leader>n <esc>:tabprevious<CR>
 map <leader>m <esc>:tabnext<CR>
+
 
 " Better split switching (Ctrl-j, Ctrl-k, Ctrl-h, Ctrl-l)
 map <C-j> <C-W>j
@@ -259,11 +299,35 @@ nnoremap <leader>] >i{<CR>
 nnoremap <leader>[ <i{<CR>
 
 
-
 " NERD Commenter
 let NERDSpaceDelims=1
 let NERDCompactSexyComs=1
 let g:NERDCustomDelimiters = { 'racket': { 'left': ';', 'leftAlt': '#|', 'rightAlt': '|#' } }
+
+" close NERDTree after a file is opened
+let g:NERDTreeQuitOnOpen=0
+" show hidden files in NERDTree
+let NERDTreeShowHidden=1
+" Toggle NERDTree
+" nmap <silent> <leader>k :NERDTreeToggle<cr>
+" expand to the path of the file in the current buffer
+nmap <silent> <leader>y :NERDTreeFind<cr>
+
+" map fuzzyfinder (CtrlP) plugin
+" nmap <silent> <leader>t :CtrlP<cr>
+nmap <silent> <leader>r :CtrlPBuffer<cr>
+let g:ctrlp_map='<leader>t'
+let g:ctrlp_dotfiles=1
+let g:ctrlp_working_path_mode = 'ra'
+
+" CtrlP ignore patterns
+let g:ctrlp_custom_ignore = {
+            \ 'dir': '\.git$\|node_modules$\|\.hg$\|\.svn$',
+            \ 'file': '\.exe$\|\.so$'
+            \ }
+
+" search the nearest ancestor that contains .git, .hg, .svn
+let g:ctrlp_working_path_mode = 2
 
 " Buffer navigation (,,) (,]) (,[) (,ls)
 map <Leader>, <C-^>
