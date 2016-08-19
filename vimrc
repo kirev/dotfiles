@@ -22,6 +22,9 @@ Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'} " powerline add
 Plugin 'sjl/gundo.vim' "visualize your Vim undo tree"
 Plugin 'mileszs/ack.vim' "favorite search tool from Vim"
 
+" colorschemes
+Plugin 'sjl/badwolf'
+
 " JavaScript plugins
 Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
@@ -36,9 +39,14 @@ set autoread " detect when a file is changed
 " set a map leader for more key combos
 let mapleader=","
 
-" Set syntax highlighting options.
+" switch syntax highlighting on
+syntax on
 
+set encoding=utf-8 nobomb " BOM often causes trouble
+set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors"
+set background=dark
 colorscheme badwolf
+
 " Enabled later, after Pathogen
 filetype off
 
@@ -62,7 +70,6 @@ set backspace=indent,eol,start
 set cursorline " Highlight current line
 set diffopt=filler " Add vertical spaces to keep right and left aligned
 set diffopt+=iwhite " Ignore whitespace changes (focus on code changes)
-set encoding=utf-8 nobomb " BOM often causes trouble
 set esckeys " Allow cursor keys in insert mode.
 set expandtab " Expand tabs to spaces
 
