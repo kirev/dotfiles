@@ -24,6 +24,7 @@ Plugin 'mileszs/ack.vim' "favorite search tool from Vim"
 
 " colorschemes
 Plugin 'sjl/badwolf'
+Plugin 'ryanoasis/vim-devicons'
 
 " JavaScript plugins
 Plugin 'pangloss/vim-javascript'
@@ -43,9 +44,14 @@ let mapleader=","
 syntax on
 
 set encoding=utf-8 nobomb " BOM often causes trouble
-set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors"
 set background=dark
-colorscheme badwolf
+colorscheme badwolf 
+
+" set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors"
+
+"Settings for vim-powerline
+set laststatus=2
 
 " Enabled later, after Pathogen
 filetype off
@@ -395,9 +401,6 @@ call pathogen#runtime_append_all_bundles()
 
 "Setup Patogen to manage your plugins
 call pathogen#infect()
-
-"Settings for vim-powerline
-set laststatus=2
 
 "Settings for ctrlp
 let g:ctrlp_max_height = 30
