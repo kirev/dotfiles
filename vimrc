@@ -12,7 +12,7 @@ call vundle#begin()
 Plugin 'gmarik/vundle'
 
 " utilities
-Plugin 'kien/ctrlp.vim' " fuzzy find files
+Plugin 'ctrlpvim/ctrlp.vim' " fuzzy find files
 Plugin 'scrooloose/nerdtree' " file drawer, open with :NERDTreeToggle
 Plugin 'benmills/vimux'
 Plugin 'tpope/vim-fugitive' " the ultimate git helper
