@@ -6,6 +6,7 @@ Plugin 'gmarik/vundle'
 " utilities
 Plugin 'ctrlpvim/ctrlp.vim' " fuzzy find files
 Plugin 'scrooloose/nerdtree' " file drawer, open with :NERDTreeToggle
+Plugin 'scrooloose/syntastic' "syntastic
 Plugin 'benmills/vimux'
 Plugin 'tpope/vim-fugitive' " the ultimate git helper
 Plugin 'tpope/vim-commentary' " comment/uncomment lines with gcc or gc in visual mode
