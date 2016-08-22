@@ -2,6 +2,7 @@
 alias tm='tmux'
 alias tms='tmux new-session -s'
 alias tmsa='tmux attach -t'
+alias tma='tmux attach'
 # Easier navigation: .., ..., ~ and -
 alias ..="cd .."
 alias cd..="cd .."

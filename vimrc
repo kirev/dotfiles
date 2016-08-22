@@ -6,31 +6,9 @@
 filetype off
 
 set rtp+=~/.vim/bundle/vundle/
-call vundle#begin()
 
-" let vundle manage vundle
-Plugin 'gmarik/vundle'
+source ~/dotfiles/install/vim/plugins.vim
 
-" utilities
-Plugin 'ctrlpvim/ctrlp.vim' " fuzzy find files
-Plugin 'scrooloose/nerdtree' " file drawer, open with :NERDTreeToggle
-Plugin 'benmills/vimux'
-Plugin 'tpope/vim-fugitive' " the ultimate git helper
-Plugin 'tpope/vim-commentary' " comment/uncomment lines with gcc or gc in visual mode
-Plugin 'tpope/vim-vinegar' " Split windows and the project drawer go together like oil and vinegar
-Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'} " powerline add support
-Plugin 'sjl/gundo.vim' "visualize your Vim undo tree"
-Plugin 'mileszs/ack.vim' "favorite search tool from Vim"
-
-" colorschemes
-Plugin 'sjl/badwolf'
-Plugin 'ryanoasis/vim-devicons'
-
-" JavaScript plugins
-Plugin 'pangloss/vim-javascript'
-Plugin 'jelera/vim-javascript-syntax'
-
-call vundle#end()
 filetype plugin indent on
 
 " Make vim more useful
@@ -175,9 +153,9 @@ set ruler " Show the cursor position
 " Tab control
 set noexpandtab " tabs ftw
 set smarttab " At start of line, <Tab> inserts shiftwidth spaces, <Bs> deletes shiftwidth spaces.
-set tabstop=2 " the visible width of tabs
-set softtabstop=2 " Tab key results in 2 spaces
-set shiftwidth=2 " The # of spaces for indenting.
+set tabstop=4 " the visible width of tabs
+set softtabstop=4 " Tab key results in 2 spaces
+set shiftwidth=4 " The # of spaces for indenting.
 set shiftround " round indent to a multiple of 'shiftwidth'
 
 set shortmess=atI " Don't show the intro message when starting vim.
@@ -311,6 +289,29 @@ endif
 nnoremap <leader>] >i{<CR>
 nnoremap <leader>[ <i{<CR>
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Functions
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+map <C-h> :call WinMove('h')<cr>
+map <C-j> :call WinMove('j')<cr>
+map <C-k> :call WinMove('k')<cr>
+map <C-l> :call WinMove('l')<cr>
+
+" Window movement shortcuts
+" move to the window in the direction shown, or create a new window
+function! WinMove(key)
+    let t:curwin = winnr()
+    exec "wincmd ".a:key
+    if (t:curwin == winnr())
+        if (match(a:key,'[jk]'))
+            wincmd v
+        else
+            wincmd s
+        endif
+        exec "wincmd ".a:key
+    endif
+endfunction
 
 " NERD Commenter
 let NERDSpaceDelims=1
@@ -322,7 +323,7 @@ let g:NERDTreeQuitOnOpen=0
 " show hidden files in NERDTree
 let NERDTreeShowHidden=1
 " Toggle NERDTree
-" nmap <silent> <leader>k :NERDTreeToggle<cr>
+ nmap <silent> <leader>k :NERDTreeToggle<cr>
 " expand to the path of the file in the current buffer
 nmap <silent> <leader>y :NERDTreeFind<cr>
 
