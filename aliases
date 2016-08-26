@@ -3,6 +3,7 @@ alias tm='tmux'
 alias tms='tmux new-session -s'
 alias tmsa='tmux attach -t'
 alias tma='tmux attach'
+alias tmr='tmux source ~/.tmux.conf'
 # Easier navigation: .., ..., ~ and -
 alias ..="cd .."
 alias cd..="cd .."
@@ -139,13 +140,10 @@ alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
 
 #Run node apps
 alias nup="npm install"
-alias ndev="npm run dev"
-alias ntest="npm run local:test"
-alias jsval="npm run eslint"
-alias cssval="npm run csslint"
-alias ndist="npm run build"
-alias nloc="npm run local"
-
+alias test="npm run local:test"
+alias dist="npm run build"
+alias dev="npm run local:dash"
+alias loc="npm run local"
 #PM2
 alias pm="pm2"
 alias pms="pm2 start"
