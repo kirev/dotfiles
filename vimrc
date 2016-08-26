@@ -153,9 +153,9 @@ set ruler " Show the cursor position
 " Tab control
 set noexpandtab " tabs ftw
 set smarttab " At start of line, <Tab> inserts shiftwidth spaces, <Bs> deletes shiftwidth spaces.
-set tabstop=4 " the visible width of tabs
-set softtabstop=4 " Tab key results in 2 spaces
-set shiftwidth=4 " The # of spaces for indenting.
+set tabstop=2 " the visible width of tabs
+set softtabstop=2 " Tab key results in 2 spaces
+set shiftwidth=2 " The # of spaces for indenting.
 set shiftround " round indent to a multiple of 'shiftwidth'
 
 set shortmess=atI " Don't show the intro message when starting vim.
@@ -313,6 +313,39 @@ function! WinMove(key)
     endif
 endfunction
 
+"Swap Lines
+"Move up and down lines
+function! s:swap_lines(n1, n2)
+    let line1 = getline(a:n1)
+    let line2 = getline(a:n2)
+    call setline(a:n1, line2)
+    call setline(a:n2, line1)
+endfunction
+
+function! s:swap_up()
+    let n = line('.')
+    if n == 1
+        return
+    endif
+
+    call s:swap_lines(n, n - 1)
+    exec n - 1
+endfunction
+
+function! s:swap_down()
+    let n = line('.')
+    if n == line('$')
+        return
+    endif
+
+    call s:swap_lines(n, n + 1)
+    exec n + 1
+endfunction
+
+" noremap <leader>su :call swap_up()<CR>
+" noremap <leader>sd :call swap_down()<CR>
+noremap <silent> <c-s-p> :call <SID>swap_down()<CR>
+noremap <silent> <c-s-o> :call <SID>swap_up()<CR>
 " NERD Commenter
 let NERDSpaceDelims=1
 let NERDCompactSexyComs=1
