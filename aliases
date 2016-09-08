@@ -69,10 +69,17 @@ alias vlc="osascript ~/code/VLCControl/VLCControl.scpt"
 alias c='pygmentize -O style=monokai -f console256 -g'
 
 # GIT STUFF
-
+# Shortcuts
+alias git="hub"
+alias g="git"
+alias v="vim"
+alias gd="g diff"
+alias gpr="g plrm"
+alias gs="g s"
+alias gc="g cam"
+alias gco="g co"
 # Undo a `git push`
 alias undopush="git push -f origin HEAD^:master"
-
 
 # git root
 alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
@@ -103,11 +110,6 @@ alias trimcopy="tr -d '\n' | pbcopy"
 
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
-
-# Shortcuts
-alias git="hub"
-alias g="git"
-alias v="vim"
 
 # File size
 alias fs="stat -f \"%z bytes\""
@@ -148,3 +150,6 @@ alias loc="npm run local"
 alias pm="pm2"
 alias pms="pm2 start"
 alias pmls="pm2 ls"
+
+alias chrome="/Applications/Google\\ \\Chrome.app/Contents/MacOS/Google\\ \\Chrome"
+alias canary="/Applications/Google\\ Chrome\\ Canary.app/Contents/MacOS/Google\\ Chrome\\ Canary"

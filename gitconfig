@@ -16,6 +16,7 @@
   std = stash drop
   upodg = pull dg
   pordg = push dg
+  plrm = pull-request
   r = revert
   m = merge
   r2 = checkout v1.2
@@ -50,10 +51,12 @@
   pubdev = !git pub checkout master && git pull && git checkout dev && git rebase master && git checkout master && git merge dev && git wtf
   pub = push -u origin
   rv = remote -v
-  lwr = log --stat -C
+  ra = remote add
+	lwr = log --stat -C
   pur = pull --rebase
   whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
   reb = rebase -i HEAD~3
+
 
 [color]
   ui = always

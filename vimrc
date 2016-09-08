@@ -153,9 +153,9 @@ set ruler " Show the cursor position
 " Tab control
 set noexpandtab " tabs ftw
 set smarttab " At start of line, <Tab> inserts shiftwidth spaces, <Bs> deletes shiftwidth spaces.
-set tabstop=4 " the visible width of tabs
-set softtabstop=4 " Tab key results in 2 spaces
-set shiftwidth=4 " The # of spaces for indenting.
+set tabstop=2 " the visible width of tabs
+set softtabstop=2 " Tab key results in 2 spaces
+set shiftwidth=2 " The # of spaces for indenting.
 set shiftround " round indent to a multiple of 'shiftwidth'
 
 set shortmess=atI " Don't show the intro message when starting vim.

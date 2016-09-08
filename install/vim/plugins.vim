@@ -14,6 +14,7 @@ Plugin 'tpope/vim-vinegar' " Split windows and the project drawer go together li
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'} " powerline add support
 Plugin 'sjl/gundo.vim' "visualize your Vim undo tree"
 Plugin 'mileszs/ack.vim' "favorite search tool from Vim"
+Plugin 'mustache/vim-mustache-handlebars' "mustache sintax"
 
 " colorschemes
 Plugin 'sjl/badwolf'
