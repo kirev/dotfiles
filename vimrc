@@ -23,8 +23,8 @@ syntax on
 
 set encoding=utf-8 nobomb " BOM often causes trouble
 set background=dark
-colorscheme badwolf 
-
+" colorscheme badwolf 
+colorscheme nova
 " set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors"
 
@@ -151,7 +151,7 @@ set report=0 " Show all changes.
 set ruler " Show the cursor position
 
 " Tab control
-set noexpandtab " tabs ftw
+" set noexpandtab " tabs ftw
 set smarttab " At start of line, <Tab> inserts shiftwidth spaces, <Bs> deletes shiftwidth spaces.
 set tabstop=2 " the visible width of tabs
 set softtabstop=2 " Tab key results in 2 spaces
