@@ -25,9 +25,9 @@ set encoding=utf-8 nobomb " BOM often causes trouble
 set background=dark
 " colorscheme badwolf 
 colorscheme nova
+
 " set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors"
-
 "Settings for vim-powerline
 set laststatus=2
 
