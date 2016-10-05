@@ -246,3 +246,7 @@ function gifify() {
 function activiti(){
  ssh -L 8181:c-activiti01vm.corporate.nsirad.com:8181 neurostar@c-bravovm.corporate.nsirad.com
 }
+
+function NOKQ(){
+	export EVENT_NOKQUEUE=1
+}
