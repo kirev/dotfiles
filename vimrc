@@ -3,16 +3,13 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " load plugins from vundle
+set nocompatible
 filetype off
-
-set rtp+=~/.vim/bundle/vundle/
-
+set rtp+=~/.vim/bundle/Vundle.vim
 source ~/dotfiles/install/vim/plugins.vim
-
 filetype plugin indent on
 
 " Make vim more useful
-set nocompatible
 set autoread " detect when a file is changed
 
 " set a map leader for more key combos
@@ -23,11 +20,12 @@ syntax on
 
 set encoding=utf-8 nobomb " BOM often causes trouble
 set background=dark
-" colorscheme badwolf 
+" colorscheme badwolf
 colorscheme nova
 
 " set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors"
+
 "Settings for vim-powerline
 set laststatus=2
 
@@ -392,6 +390,7 @@ nnoremap Y y$
 map <leader><Enter> o<ESC>
 
 " Search and replace word under cursor (,*)
+
 nnoremap <leader>* :%s/\<<C-r><C-w>\>//<Left>
 
 " Strip trailing whitespace (,ss)
@@ -429,12 +428,6 @@ autocmd BufReadPost *
 " Set relative line numbers
 set relativenumber " Use relative line numbers. Current line is still in status bar.
 au BufReadPost,BufNewFile * set relativenumber
-
-" Emulate bundles, allow plugins to live independantly. Easier to manage.
-call pathogen#runtime_append_all_bundles()
-
-"Setup Patogen to manage your plugins
-call pathogen#infect()
 
 "Settings for ctrlp
 let g:ctrlp_max_height = 30
@@ -515,8 +508,10 @@ au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
 " ZSH
 au BufRead,BufNewFile .zsh_rc,.functions,.commonrc set ft=zsh
 
-
-
+" UltiSnips  Trigger configuration (Optional)
+let g:UltiSnipsExpandTrigger="<c-l>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " Clojure.vim
 let g:vimclojure#ParenRainbow = 1 " Enable rainbow parens
 let g:vimclojure#DynamicHighlighting = 1 " Dynamic highlighting
@@ -535,3 +530,9 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+"Airline
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'

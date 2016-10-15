@@ -1,7 +1,6 @@
 call vundle#begin()
-
-" let vundle manage vundle
-Plugin 'gmarik/vundle'
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
 
 " utilities
 Plugin 'ctrlpvim/ctrlp.vim' " fuzzy find files
@@ -30,4 +29,15 @@ Plugin 'mxw/vim-jsx'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
-call vundle#end()
+" Track the engine.
+Plugin 'SirVer/ultisnips'
+
+"ES2015 snippets
+Plugin 'epilande/vim-es2015-snippets'
+
+" React code snippets
+Plugin 'epilande/vim-react-snippets'
+
+" All of your Plugins must be added before the following line
+
+call vundle#end()            " required
