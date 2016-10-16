@@ -2,5 +2,5 @@
 .tmp
 .DS_Store
 vim/undo/
-
+vim/bundle/
 *.log
