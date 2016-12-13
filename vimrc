@@ -509,7 +509,7 @@ au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
 au BufRead,BufNewFile .zsh_rc,.functions,.commonrc set ft=zsh
 
 " UltiSnips  Trigger configuration (Optional)
-let g:UltiSnipsExpandTrigger="<c-l>"
+let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " Clojure.vim
