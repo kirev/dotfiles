@@ -12,14 +12,6 @@ function f() {
     find . -name "$1"
 }
 
-#MongoDB functions to start and stop the server 
-function mongod(){
-	cd /usr/local/mongodb/bin/ && ./mongod  
-}
-function mongo(){
-	cd /usr/local/mongodb/bin/ && ./mongo
-}
-
 #Backup a file with the current date 
 function bkf(){
   local thisdate=`date +%Y%m%d-%H%M`
@@ -28,61 +20,10 @@ function bkf(){
   cp "$1" "$bakfile"
   echo "done"
 }
-
-#Log Live Git Command
-#https://gist.github.com/tlberglund/3714970
-function gitTree(){
-while :
-  do
-  clear
-  tree .git
-  sleep 1
-done
-}
-
-#Log Live Git Command 1
-function loglive(){
-while :
-  do
-      clear
-      git --no-pager log --graph --pretty=oneline --abbrev-commit --decorate --all $*
-      sleep 1
-  done
-}
-#Log Live Git Command 2
-function logliveb(){
-  while :
-  do
-    clear
-    git --no-pager log -$1 --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-    sleep 1
-  done
-}
-
 # cd into whatever is the forefront Finder window.
 cdf() {  # short for cdfinder
     cd "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
  }
-
-# lets toss an image onto my server and pbcopy that bitch.
-function scpp() {
-    scp "$1" aurgasm@aurgasm.us:~/paulirish.com/i;
-    echo "http://paulirish.com/i/$1" | pbcopy;
-    echo "Copied to clipboard: http://paulirish.com/i/$1"
-}
-
-# ssh to local sandBox servers
-function blade(){
-	ssh crac@10.0.1.8
-}
-
-function spi(){
-	ssh pi@10.0.1.9 
-}
-
-function megatron(){
-	ssh verik@10.0.1.10
-}
 
 # Start an HTTP server from a directory, optionally specifying the port
 function server() {
@@ -93,14 +34,11 @@ function server() {
 	python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port"
 	
 }
+
 function ssk(){
 	local port="${1:-8000}"
 	#sleep 1 && open "http://localhost:${port}/" &
 	python ~/server/mserver.py ${port}
-}
-
-function runPlex(){
-	sudo ./Volumes/Storage/ATV3/PlexConnect/PlexConnect.py
 }
 
 # git log with per-commit cmd-clickable GitHub URLs (iTerm)
@@ -131,17 +69,6 @@ cp_p () {
 # Send a fake UA string for sites that sniff it instead of using the Accept-Encoding header. (Looking at you, ajax.googleapis.com!)
 function httpcompression() {
 	encoding="$(curl -LIs -H 'User-Agent: Mozilla/5 Gecko' -H 'Accept-Encoding: gzip,deflate,compress,sdch' "$1" | grep '^Content-Encoding:')" && echo "$1 is encoded using ${encoding#* }" || echo "$1 is not using any encoding"
-}
-
-# Syntax-highlight JSON strings or files
-function json() {
-	if [ -p /dev/stdin ]; then
-		# piping, e.g. `echo '{"foo":42}' | json`
-		python -mjson.tool | pygmentize -l javascript
-	else
-		# e.g. `json '{"foo":42}'`
-		python -mjson.tool <<< "$*" | pygmentize -l javascript
-	fi
 }
 
 # get gzipped size
@@ -243,14 +170,6 @@ function gifify() {
   fi
 }
 
-function activiti(){
- ssh -L 8181:c-activiti01vm.corporate.nsirad.com:8181 neurostar@c-bravovm.corporate.nsirad.com
-}
-
-function NOKQ(){
-	export EVENT_NOKQUEUE=1
-}
-
 function dsdel() {
  find . -name .DS_Store -print0 | xargs -0 git rm -f --ignore-unmatch
 }
@@ -269,4 +188,8 @@ function matchrun_filename() {
 
 function matchrun_contents() {
   grep -Ri "$1" -e "$2" -lZ | xargs -0 "${@:3}"
+}
+
+function code() { 
+  VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;
 }

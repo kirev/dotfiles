@@ -340,8 +340,8 @@ function! s:swap_down()
     exec n + 1
 endfunction
 
-" noremap <leader>su :call swap_up()<CR>
 " noremap <leader>sd :call swap_down()<CR>
+" noremap <leader>su :call swap_up()<CR>
 noremap <silent> <c-s-p> :call <SID>swap_down()<CR>
 noremap <silent> <c-s-o> :call <SID>swap_up()<CR>
 " NERD Commenter
@@ -536,3 +536,17 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
+
+" format with goimports instead of gofmt
+let g:go_fmt_command = "goimports"
+" disable fmt on save
+let g:go_fmt_autosave = 0
+" Jump quick from errors
+map <C-n> :cnext<CR>
+map <C-m> :cprevious<CR>
+nnoremap <leader>a :cclose<CR>
+" Map for go build, run
+autocmd FileType go nmap <leader>b  <Plug>(go-build)
+autocmd FileType go nmap <leader>v  <Plug>(go-run)
+
+let g:go_list_type = "quickfix"

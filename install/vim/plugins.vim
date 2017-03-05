@@ -28,7 +28,8 @@ Plugin 'hail2u/vim-css3-syntax'
 Plugin 'mxw/vim-jsx'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-
+" GO plugin
+Plugin 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 " Track the engine.
 Plugin 'SirVer/ultisnips'
 

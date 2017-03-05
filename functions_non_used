@@ -1,0 +1,69 @@
+#MongoDB functions to start and stop the server 
+function mongod(){
+	cd /usr/local/mongodb/bin/ && ./mongod  
+}
+function mongo(){
+	cd /usr/local/mongodb/bin/ && ./mongo
+}
+#Log Live Git Command
+#https://gist.github.com/tlberglund/3714970
+function gitTree(){
+while :
+  do
+  clear
+  tree .git
+  sleep 1
+done
+}
+
+#Log Live Git Command 1
+function loglive(){
+while :
+  do
+      clear
+      git --no-pager log --graph --pretty=oneline --abbrev-commit --decorate --all $*
+      sleep 1
+  done
+}
+#Log Live Git Command 2
+function logliveb(){
+  while :
+  do
+    clear
+    git --no-pager log -$1 --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    sleep 1
+  done
+}
+# lets toss an image onto my server and pbcopy that bitch.
+function scpp() {
+    scp "$1" aurgasm@aurgasm.us:~/paulirish.com/i;
+    echo "http://paulirish.com/i/$1" | pbcopy;
+    echo "Copied to clipboard: http://paulirish.com/i/$1"
+}
+# ssh to local sandBox servers
+function blade(){
+	ssh crac@10.0.1.8
+}
+
+function spi(){
+	ssh pi@10.0.1.9 
+}
+
+function megatron(){
+	ssh verik@10.0.1.10
+}
+function runPlex(){
+	sudo ./Volumes/Storage/ATV3/PlexConnect/PlexConnect.py
+}
+
+
+# Syntax-highlight JSON strings or files
+function json() {
+	if [ -p /dev/stdin ]; then
+		# piping, e.g. `echo '{"foo":42}' | json`
+		python -mjson.tool | pygmentize -l javascript
+	else
+		# e.g. `json '{"foo":42}'`
+		python -mjson.tool <<< "$*" | pygmentize -l javascript
+	fi
+}
