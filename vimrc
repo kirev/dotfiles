@@ -340,8 +340,8 @@ function! s:swap_down()
     exec n + 1
 endfunction
 
-" noremap <leader>su :call swap_up()<CR>
 " noremap <leader>sd :call swap_down()<CR>
+" noremap <leader>su :call swap_up()<CR>
 noremap <silent> <c-s-p> :call <SID>swap_down()<CR>
 noremap <silent> <c-s-o> :call <SID>swap_up()<CR>
 " NERD Commenter
