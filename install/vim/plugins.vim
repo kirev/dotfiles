@@ -20,6 +20,8 @@ Plugin 'sjl/badwolf'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'trevordmiller/nova-vim'
 
+Plugin 'dracula/vim'
+
 " JavaScript plugins
 Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
