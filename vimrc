@@ -21,7 +21,7 @@ syntax on
 set encoding=utf-8 nobomb " BOM often causes trouble
 set background=dark
 " colorscheme badwolf
-colorscheme nova
+colorscheme dracula
 
 " set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors"
@@ -437,7 +437,7 @@ let g:ctrlp_match_window_bottom = 0 " Show at top of window
 let g:ctrlp_working_path_mode = 2 " Smart path mode
 let g:ctrlp_mru_files = 1 " Enable Most Recently Used files feature
 let g:ctrlp_jump_to_buffer = 2 " Jump to tab AND buffer if already open
-let g:ctrlp_split_window = 1 " <CR> = New Tab
+let g:ctrlp_split_window = 0 " <CR> = New Tab
 
 "Settings for python-mode
 map <leader>g :call RopenGotoDefinition()<CR>
@@ -550,3 +550,5 @@ autocmd FileType go nmap <leader>b  <Plug>(go-build)
 autocmd FileType go nmap <leader>v  <Plug>(go-run)
 
 let g:go_list_type = "quickfix"
+
+" let g:user_emmet_leader_key='<C-Q>'

@@ -1,0 +1,10 @@
+{
+    "git.confirmSync": false,
+    "workbench.colorTheme": "Dracula",
+    "workbench.iconTheme": "file-icons",
+    "editor.fontSize": 15,
+    "editor.fontFamily": "Operator Mono",
+    "terminal.integrated.fontFamily":"Operator Mono",
+    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.lineHeight": 1.6
+}
