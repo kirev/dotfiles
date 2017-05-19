@@ -3,6 +3,7 @@
   up = pull
   p = push
   upo = pull origin
+  upr = pull --rebase origin
   co = checkout
   por = push origin
   b = branch

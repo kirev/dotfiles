@@ -10,3 +10,5 @@ MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+export PATH="$HOME/.yarn/bin:$PATH"
