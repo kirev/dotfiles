@@ -3,7 +3,7 @@
   up = pull
   p = push
   upo = pull origin
-  upr = pull --rebase origin
+  rup = pull --rebase
   co = checkout
   por = push origin
   b = branch
@@ -20,10 +20,7 @@
   plrm = pull-request
   r = revert
   m = merge
-  r2 = checkout v1.2
   dev = checkout develop
-  #r2up= !git checkout v1.2  && git pull dg v1.2 
-  devup = !git checkout develop && git pull dg develop
 
   df = diff --color --color-words --abbrev
   lg = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative  
