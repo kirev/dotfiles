@@ -30,6 +30,10 @@ Plugin 'hail2u/vim-css3-syntax'
 Plugin 'mxw/vim-jsx'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+
+" HTML plugins
+Plugin 'mattn/emmet-vim'
+
 " GO plugin
 Plugin 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 " Track the engine.

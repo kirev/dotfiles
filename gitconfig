@@ -53,7 +53,7 @@
 	lwr = log --stat -C
   pur = pull --rebase
   whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
-  reb = rebase -i HEAD~3
+  rbi = rebase -i
 
 
 [color]
