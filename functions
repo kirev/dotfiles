@@ -193,3 +193,10 @@ function matchrun_contents() {
 function code() { 
   VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;
 }
+
+function nmc() {
+ find . -name "node_modules" -exec rm -rf '{}' +
+}
+function nms() {
+ find . -name "node_modules"
+}
