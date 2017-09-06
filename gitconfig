@@ -23,16 +23,16 @@
   dev = checkout develop
 
   df = diff --color --color-words --abbrev
-  lg = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative  
+  lg = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   lg2 = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   lol = log --pretty=oneline --abbrev-commit --graph --decorate --all
   lod = log --oneline --decorate
   lp = log -p
   lf = log --graph
-  #l1 = log  --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --  
+  #l1 = log  --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
   #l2 = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   #lf = log --pretty=fuller
-  
+
   ignorechanges = update-index --assume-unchanged
   noticechanges = update-index --no-assume-unchanged
   gc-ap = gc --aggressive --prune
@@ -57,29 +57,45 @@
 
 
 [color]
-  ui = always
+  ui = true
+
 [core]
     excludesfile = ~/.gitignore
     attributesfile = ~/.gitattributes
+    pager = diff-so-fancy | less --tabs=4 -RFX
 
 [color "branch"]
-    current = yellow reverse
-      local = yellow
-        remote = green
+  current = yellow reverse
+  local = yellow
+  remote = green
+
+[color "diff-highlight"]
+    oldNormal = red bold
+    oldHighlight = red bold 52
+    newNormal = green bold
+    newHighlight = green bold 22
+
 [color "diff"]
-    meta = yellow bold
-      frag = magenta bold
-        old = red bold
-          new = green bold
+  meta = 227
+  frag = magenta bold
+  commit = 227 bold
+  old = red bold
+  new = green bold
+  whitespace = red reverse
+    # meta = yellow bold
+    # frag = magenta bold
+    # old = red bold
+    # new = green bold
 [color "status"]
     added = yellow
-      changed = green
-        untracked = cyan
+    changed = green
+    untracked = cyan
+
 [merge]
     log = true
 [user]
-	name = Andres Castro
-	email = andres.ca@gmail.com
+	name = Andres
+	email = andres@kirev.com
 [mergetool]
 	keepBackup = false
 [credential]

@@ -25,4 +25,7 @@ brew install z
 brew install markdown
 brew install diff-so-fancy
 
+# node
+brew install redis
+brew install mongodb
 exit 0

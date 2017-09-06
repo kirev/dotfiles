@@ -155,5 +155,12 @@ alias pm="pm2"
 alias pms="pm2 start"
 alias pmls="pm2 ls"
 
+
+#Docker
+alias dok="docker"
+
 alias chrome="/Applications/Google\\ \\Chrome.app/Contents/MacOS/Google\\ \\Chrome"
 alias canary="/Applications/Google\\ Chrome\\ Canary.app/Contents/MacOS/Google\\ Chrome\\ Canary"
+
+alias showAppAny="sudo spctl --master-disable"
+alias hideAppAny="sudo spctl --master-enable"
