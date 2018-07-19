@@ -4,6 +4,7 @@
   p = push
   upo = pull origin
   rup = pull --rebase
+  rupo = pull --rebase origin
   co = checkout
   por = push origin
   b = branch
@@ -16,6 +17,7 @@
   sta = stash apply
   std = stash drop
   upodg = pull dg
+  rudg = pull --rebase dg
   pordg = push dg
   plrm = pull-request
   r = revert
@@ -94,8 +96,8 @@
 [merge]
     log = true
 [user]
-	name = Andres
-	email = andres@kirev.com
+	name = crac
+	email = andres.ca@gmail.com
 [mergetool]
 	keepBackup = false
 [credential]

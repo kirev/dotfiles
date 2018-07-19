@@ -164,3 +164,15 @@ alias canary="/Applications/Google\\ Chrome\\ Canary.app/Contents/MacOS/Google\\
 
 alias showAppAny="sudo spctl --master-disable"
 alias hideAppAny="sudo spctl --master-enable"
+
+#npm basic
+
+alias nst="npm start"
+alias lnd="lando start"
+alias lnds="lando stop"
+
+alias yst="yarn start"
+alias ysf="yarn run start:sf"
+alias yri="yarn install"
+
+alias ssha="ssh-add -K ~/.ssh/silverback"
