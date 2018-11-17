@@ -19,7 +19,7 @@ let mapleader=","
 syntax on
 
 set encoding=utf-8 nobomb " BOM often causes trouble
-set background=dark
+"set background=dark
 " colorscheme badwolf
 colorscheme dracula
 

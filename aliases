@@ -15,6 +15,8 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 alias cl='clear'
 
+# alias python='/usr/local/bin/python3'
+
 # some more ls aliases
 	alias ll='ls -alF'
 	alias la='ls -A'
@@ -30,6 +32,8 @@ alias lsd='ls -l | grep "^d"'
 # programs
 #alias slt='open -a "Sublime Text 2"'
 
+alias rndg='open "rndebugger://set-debugger-loc?host=localhost&port=8081"'
+alias yrnd='REACT_DEBUGGER="open -g 'rndebugger://set-debugger-loc?port=8001'" yarn ios:prod'
 alias op='open .'
 
 alias sb='subl'
@@ -39,7 +43,7 @@ alias sb='subl'
 
 # be nice
 alias please=sudo
-alias hosts='mate /etc/hosts'   # yes I occasionally 127.0.0.1 twitter.com ;)
+alias hosts='code /etc/hosts'   # yes I occasionally 127.0.0.1 twitter.com ;)
 alias hts='cd /etc/hosts'   # yes I occasionally 127.0.0.1 twitter.com ;)
 
 # handy things
@@ -168,11 +172,17 @@ alias hideAppAny="sudo spctl --master-enable"
 #npm basic
 
 alias nst="npm start"
-alias lnd="lando start"
+#alias lnd="lando start"
 alias lnds="lando stop"
+
+alias lnd="lando poweroff; lando start"
 
 alias yst="yarn start"
 alias ysf="yarn run start:sf"
 alias yri="yarn install"
 
 alias ssha="ssh-add -K ~/.ssh/silverback"
+alias sshb="ssh-add -K ~/.ssh/kl"
+alias hkl="heroku login"
+
+alias iod='xcrun instruments -s devices'

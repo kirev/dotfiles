@@ -25,10 +25,10 @@ export PATH="/usr/local/opt/apr/bin:${PATH}"
 export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export PATH="/usr/local/git/bin/:$PATH"
-export JAVA_HOME=$(/usr/libexec/java_home)
+#export JAVA_HOME=$(/usr/libexec/java_home)
 export MONGO_PATH=/usr/local/mongodb
 export PATH=$PATH:$MONGO_PATH/bin
-export PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+export PATH="/usr/bin/python:${PATH}"
 export PATH="$HOME/scripts/:$PATH"
 
 #Fix issue with tmux session

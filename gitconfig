@@ -23,7 +23,7 @@
   r = revert
   m = merge
   dev = checkout develop
-
+  phk= push heroku
   df = diff --color --color-words --abbrev
   lg = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   lg2 = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
@@ -48,7 +48,6 @@
   logr2 = log --stat -M -2
   logit = log --stat -M
   scrub = !git reset --hard && git clean -fd
-  pubdev = !git pub checkout master && git pull && git checkout dev && git rebase master && git checkout master && git merge dev && git wtf
   pub = push -u origin
   rv = remote -v
   ra = remote add
@@ -96,7 +95,7 @@
 [merge]
     log = true
 [user]
-	name = crac
+	name = cracdev
 	email = andres.ca@gmail.com
 [mergetool]
 	keepBackup = false

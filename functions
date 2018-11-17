@@ -200,3 +200,21 @@ function nmc() {
 function nms() {
  find . -name "node_modules"
 }
+
+# react-native
+function rnn-clean() {
+  watchman watch-del-all
+  rm -rf $TMPDIR/react-*
+  rm -rf $TMPDIR/haste-*
+  rm -rf $TMPDIR/metro-*
+  npm start -- --reset-cache
+}
+
+function rny-clean() {
+  watchman watch-del-all
+  rm -rf $TMPDIR/react-*
+  rm -rf $TMPDIR/haste-*
+  rm -rf $TMPDIR/metro-*
+  yarn cache clean
+  yarn start 
+}
