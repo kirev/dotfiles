@@ -33,7 +33,8 @@ alias lsd='ls -l | grep "^d"'
 #alias slt='open -a "Sublime Text 2"'
 
 alias rndg='open "rndebugger://set-debugger-loc?host=localhost&port=8081"'
-alias yrnd='REACT_DEBUGGER="open -g 'rndebugger://set-debugger-loc?port=8001'" yarn ios:prod'
+alias rnsprod='REACT_DEBUGGER="open -g 'rndebugger://set-debugger-loc?port=8001'" yarn ios:prod'
+alias rndprod='REACT_DEBUGGER="open -g 'rndebugger://set-debugger-loc?port=8001'" yarn ios:device:prod'
 alias op='open .'
 
 alias sb='subl'
