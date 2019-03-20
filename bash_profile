@@ -38,4 +38,5 @@ export CPPFLAGS="-I/usr/local/opt/ncurses/include"
 #Fix issue with tmux session
 export EVENT_NOKQUEUE=1
 
+export GITHUB_TOKEN=dcaafac38882492e24b5a2109d2d3aebc57183cc
 #alias ls="ls -FHG"
