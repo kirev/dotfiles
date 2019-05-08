@@ -31,6 +31,10 @@ export PATH=$PATH:$MONGO_PATH/bin
 export PATH="/usr/bin/python:${PATH}"
 export PATH="$HOME/scripts/:$PATH"
 
+export PATH="/usr/local/opt/ncurses/bin:$PATH"
+
+export LDFLAGS="-L/usr/local/opt/ncurses/lib"
+export CPPFLAGS="-I/usr/local/opt/ncurses/include"
 #Fix issue with tmux session
 export EVENT_NOKQUEUE=1
 
