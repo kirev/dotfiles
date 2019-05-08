@@ -18,7 +18,7 @@ brew install jq
 brew install git
 brew install hub
 brew install fzf
-brew install macvim --override-system-vim
+brew install macvim
 brew install reattach-to-user-namespace
 brew install tmux
 brew install highlight
@@ -27,6 +27,6 @@ brew install markdown
 brew install diff-so-fancy
 
 # node
-brew install redis
-brew install mongodb
+#brew install redis
+#brew install mongodb
 exit 0
