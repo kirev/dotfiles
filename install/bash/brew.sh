@@ -12,6 +12,7 @@ echo "=============================="
 brew install ack
 brew install tree
 brew install wget
+brew install jq
 
 # development tools
 brew install git
