@@ -12,6 +12,11 @@ filetype plugin indent on
 " Make vim more useful
 set autoread " detect when a file is changed
 
+"Privides tab-completion for all file-related task
+set path+=**
+
+set wildmenu
+
 " set a map leader for more key combos
 let mapleader=","
 
@@ -360,6 +365,10 @@ nmap <silent> <leader>y :NERDTreeFind<cr>
 
 " map fuzzyfinder (CtrlP) plugin
 " nmap <silent> <leader>t :CtrlP<cr>
+
+"" nnoremap <leader>. :CtrlPTag<cr>
+
+
 nmap <silent> <leader>r :CtrlPBuffer<cr>
 let g:ctrlp_map='<leader>t'
 let g:ctrlp_dotfiles=1
@@ -390,7 +399,6 @@ nnoremap Y y$
 map <leader><Enter> o<ESC>
 
 " Search and replace word under cursor (,*)
-
 nnoremap <leader>* :%s/\<<C-r><C-w>\>//<Left>
 
 " Strip trailing whitespace (,ss)
@@ -486,7 +494,7 @@ nnoremap <leader>v :e ~/.vimrc<CR>
 nnoremap <leader>V :tabnew ~/.vimrc<CR>
 
 "Open a new Tab
-nnoremap <leader>t :tabnew<CR>
+nnoremap <leader>nt :tabnew<CR>
 
 filetype plugin indent on
 
@@ -518,7 +526,7 @@ let g:vimclojure#DynamicHighlighting = 1 " Dynamic highlighting
 let g:vimclojure#FuzzyIndent = 1 " Names beginning in 'def' or 'with' to be indented as if they were included in the 'lispwords' option
 
 " Rainbow Parenthesis
-nnoremap <leader>rp :RainbowParenthesesToggle<CR>
+" nnoremap <leader>rp :RainbowParenthesesToggle<CR>
 
 " Syntastic
 let g:syntastic_javascript_checkers = ['standard']
@@ -544,6 +552,7 @@ let g:go_fmt_autosave = 0
 " Jump quick from errors
 map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
+
 nnoremap <leader>a :cclose<CR>
 " Map for go build, run
 autocmd FileType go nmap <leader>b  <Plug>(go-build)

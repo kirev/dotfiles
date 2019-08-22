@@ -218,3 +218,11 @@ function rny-clean() {
   yarn cache clean
   yarn start 
 }
+
+function makeTags() {
+  ctags -R -f ./.git/tags .
+}
+
+function mTags() {
+  ctags -R .
+}

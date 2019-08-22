@@ -17,6 +17,7 @@ brew install jq
 # development tools
 brew install git
 brew install hub
+brew install ctags
 brew install fzf
 brew install macvim
 brew install reattach-to-user-namespace
@@ -25,6 +26,8 @@ brew install highlight
 brew install z
 brew install markdown
 brew install diff-so-fancy
+
+#brew tap heroku/brew && brew install heroku
 
 # node
 #brew install redis

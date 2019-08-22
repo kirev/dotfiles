@@ -52,7 +52,7 @@ alias bunyip='node ~/code/bunyip/cli.js'
 alias spotify="osascript ~/code/SpotifyControl/SpotifyControl.scpt"
 alias vlc="osascript ~/code/VLCControl/VLCControl.scpt"
 
-alias rmnode="rm -rf node_modules"
+alias pclean="rm -rf node_modules && rm -rf package-lock.json && rm -rf yarn.lock"
 # Detect which `ls` flavor is in use
 #if ls --color > /dev/null 2>&1; then # GNU `ls`
 #	colorflag="--color"
@@ -179,7 +179,7 @@ alias lnds="lando stop"
 alias lnd="lando poweroff; lando start"
 
 alias yst="yarn start"
-alias ysf="yarn run start:sf"
+alias sdt="yarn start:test"
 alias yri="yarn install"
 
 alias ssha="ssh-add -K ~/.ssh/silverback"
@@ -187,3 +187,5 @@ alias sshb="ssh-add -K ~/.ssh/kl"
 alias hkl="heroku login"
 
 alias iod='xcrun instruments -s devices'
+
+
