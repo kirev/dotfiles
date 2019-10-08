@@ -163,6 +163,9 @@ alias pmls="pm2 ls"
 
 #Docker
 alias dok="docker"
+alias dk="docker-compose"
+alias dkbd="docker-compose build"
+alias dkup="docker-compose up"
 
 alias chrome="/Applications/Google\\ \\Chrome.app/Contents/MacOS/Google\\ \\Chrome"
 alias canary="/Applications/Google\\ Chrome\\ Canary.app/Contents/MacOS/Google\\ Chrome\\ Canary"

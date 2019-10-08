@@ -31,6 +31,7 @@ export PATH=$PATH:$MONGO_PATH/bin
 export PATH="/usr/bin/python:${PATH}"
 export PATH="$HOME/scripts/:$PATH"
 
+export PATH="$HOME/go/bin/:$PATH"
 export PATH="/usr/local/opt/ncurses/bin:$PATH"
 
 export LDFLAGS="-L/usr/local/opt/ncurses/lib"

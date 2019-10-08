@@ -22,6 +22,12 @@
   plrm = pull-request
   r = revert
   m = merge
+
+#TAGS
+  lsrt = ls-remote --tags origin
+  ptg = push --tags
+  rmlt = tag -d
+
   dev = checkout develop
   phk= push heroku
   df = diff --color --color-words --abbrev
