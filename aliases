@@ -170,6 +170,8 @@ alias dkup="docker-compose up"
 alias chrome="/Applications/Google\\ \\Chrome.app/Contents/MacOS/Google\\ \\Chrome"
 alias canary="/Applications/Google\\ Chrome\\ Canary.app/Contents/MacOS/Google\\ Chrome\\ Canary"
 
+alias ccn="open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir='/tmp/chrome_dev_test' --disable-web-security"
+
 alias showAppAny="sudo spctl --master-disable"
 alias hideAppAny="sudo spctl --master-enable"
 
