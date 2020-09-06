@@ -5,6 +5,7 @@ alias tmsa='tmux attach -t'
 alias tma='tmux attach'
 alias tmr='tmux source ~/.tmux.conf'
 alias tmk='tmux kill-session -t'
+alias tmls='tmux ls'
 # Easier navigation: .., ..., ~ and -
 alias ..="cd .."
 alias cd..="cd .."
@@ -175,21 +176,39 @@ alias ccn="open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Ch
 alias showAppAny="sudo spctl --master-disable"
 alias hideAppAny="sudo spctl --master-enable"
 
-#npm basic
 
-alias nst="npm start"
+#Lando
 #alias lnd="lando start"
 alias lnds="lando stop"
-
 alias lnd="lando poweroff; lando start"
 
+#npm basic
+alias nst="npm start"
 alias yst="yarn start"
 alias sdt="yarn start:test"
 alias yri="yarn install"
 
+#kubernetes
+alias k="kubectl"
+alias kgp="kubectl get pods"
+
+alias kct="kubectl config get-contexts"
+alias kcc="kubectl config current-context"
+alias kuc="kubectl config use-context"
+
+alias ks="kubectl describe"
+alias ksp="kubectl describe pods"
+alias ksn="kubectl describe nodes"
+
+alias kd="kubectl delete"
+alias kdp="kubectl delete pod"
+alias kds="kubectl delete service"
+
+
+#Other
 alias ssha="ssh-add -K ~/.ssh/silverback"
 alias sshb="ssh-add -K ~/.ssh/kl"
-alias hkl="heroku login"
+alias sshc="ssh-add -K ~/.ssh/silverback_glb"
 
 alias iod='xcrun instruments -s devices'
 

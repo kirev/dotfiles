@@ -3,6 +3,7 @@
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin 'tmux-plugins/tmux-copycat'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
 
 # Other examples:
 
@@ -13,3 +14,5 @@ set -g @plugin 'tmux-plugins/tmux-copycat'
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
 
+#Init the resurrect
+run-shell '~/.tmux/plugins/tmux-resurrect/resurrect.tmux'
