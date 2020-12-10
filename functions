@@ -201,6 +201,10 @@ function nms() {
  find . -name "node_modules"
 }
 
+function testChrome() {
+  open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security
+}
+
 # react-native
 function rnn-clean() {
   watchman watch-del-all

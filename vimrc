@@ -16,11 +16,10 @@ set autoread " detect when a file is changed
 set path+=**
 
 set wildmenu
-
 " set a map leader for more key combos
 let mapleader=","
 
-" switch syntax highlighting on
+"switch syntax highlighting on
 syntax on
 
 set encoding=utf-8 nobomb " BOM often causes trouble
@@ -37,14 +36,16 @@ set laststatus=2
 " Enabled later, after Pathogen
 filetype off
 
-
 " Local dirs
 set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
 set undodir=~/.vim/undo
 
-" Set some junk
+set colorcolumn=120
+highlight ColorColumn ctermbg=0 guibg=lightgrey
 
+
+" Set some junk
 "Better copy & pase " Paste toggle (,p)
 set pastetoggle=<leader>p
 set clipboard=unnamed
@@ -137,14 +138,13 @@ set hidden " When a buffer is brought to foreground, remember undo history and m
 set history=1000 " Increase history from 20 default to 1000
 set hlsearch " Highlight searches
 set ignorecase " Ignore case of searches.
-set incsearch " Highlight dynamically as pattern is typed.
 set lispwords+=defroutes " Compojure
 set lispwords+=defpartial,defpage " Noir core
 set lispwords+=defaction,deffilter,defview,defsection " Ciste core
 set lispwords+=describe,it " Speclj TDD/BDD
 set magic " Enable extended regexes.
 set mouse=a " Enable moouse in all in all modes.
-set noerrorbells " Disable error bells.
+
 set nojoinspaces " Only insert single space after a '.', '?' and '!' with a join command.
 set nostartofline " Don't reset cursor to start of line when moving around.
 set nowrap " Do not wrap lines.
@@ -166,7 +166,7 @@ set showmode " Show the current mode.
 set showtabline=2 " Always show tab bar.
 set scrolloff=3 " Start scrolling three lines before horizontal border of window.
 set sidescrolloff=3 " Start scrolling three columns before vertical border of window.
-set smartcase " Ignore 'ignorecase' if search patter contains uppercase characters.
+
 set splitbelow " New window goes below
 set splitright " New windows goes right
 set suffixes=.bak,~,.swp,.swo,.o,.d,.info,.aux,.log,.dvi,.pdf,.bin,.bbl,.blg,.brf,.cb,.dmg,.exe,.ind,.idx,.ilg,.inx,.out,.toc,.pyc,.pyd,.dll

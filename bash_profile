@@ -36,9 +36,26 @@ export PATH="/usr/local/opt/ncurses/bin:$PATH"
 
 export LDFLAGS="-L/usr/local/opt/ncurses/lib"
 export CPPFLAGS="-I/usr/local/opt/ncurses/include"
+
+#java home
+export JAVA_HOME="$HOME/Library/Java/JavaVirtualMachines/openjdk-15/Contents/Home"
+export PATH="$HOME/projects/DG/securewatch/apache-maven-3.6.3/bin:$PATH"
+
 #Fix issue with tmux session
 export EVENT_NOKQUEUE=1
 
 export GITHUB_TOKEN=dcaafac38882492e24b5a2109d2d3aebc57183cc
 #alias ls="ls -FHG"
 export BASH_SILENCE_DEPRECATION_WARNING=1
+
+# Created by mirror-config-china
+export IOJS_ORG_MIRROR=https://npm.taobao.org/mirrors/iojs
+export NODIST_IOJS_MIRROR=https://npm.taobao.org/mirrors/iojs
+export NVM_IOJS_ORG_MIRROR=https://npm.taobao.org/mirrors/iojs
+export NVMW_IOJS_ORG_MIRROR=https://npm.taobao.org/mirrors/iojs
+export NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node
+export NODIST_NODE_MIRROR=https://npm.taobao.org/mirrors/node
+export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node
+export NVMW_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node
+export NVMW_NPM_MIRROR=https://npm.taobao.org/mirrors/npm
+# End of mirror-config-china

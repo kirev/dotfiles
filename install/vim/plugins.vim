@@ -15,6 +15,7 @@ Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'} " powerline add
 Plugin 'sjl/gundo.vim' "visualize your Vim undo tree"
 Plugin 'mileszs/ack.vim' "favorite search tool from Vim"
 Plugin 'mustache/vim-mustache-handlebars' "mustache sintax"
+
 " colorschemes
 Plugin 'sjl/badwolf'
 Plugin 'ryanoasis/vim-devicons'
