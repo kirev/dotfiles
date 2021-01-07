@@ -204,6 +204,7 @@ alias kd="kubectl delete"
 alias kdp="kubectl delete pod"
 alias kds="kubectl delete service"
 
+alias gawsc="gimme-aws-creds"
 
 #Other
 alias ssha="ssh-add -K ~/.ssh/silverback"
@@ -213,3 +214,4 @@ alias sshc="ssh-add -K ~/.ssh/silverback_glb"
 alias iod='xcrun instruments -s devices'
 
 
+alias ktb='sudo pkill TouchBarServer'
